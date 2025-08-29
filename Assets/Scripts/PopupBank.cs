@@ -54,6 +54,9 @@ public class PopupBank : MonoBehaviour
         d.cash -= amount;
         d.balance += amount;
         
+        //처리한 후 값을 저장
+        GameManager.Instance.SaveUserData();
+
         //UI갱신
         moneyNum.Refresh();
     }
@@ -71,6 +74,8 @@ public class PopupBank : MonoBehaviour
         d.balance -= amount;
         d.cash += amount;
 
+        GameManager.Instance.SaveUserData();
+
         moneyNum.Refresh();
     }
 
@@ -85,6 +90,7 @@ public class PopupBank : MonoBehaviour
             return;
         }
 
+        //이미 Deposit에서 Save를 하고있으니 Save를 호출하지않아도 됨
         Deposit(amount);
         depositInputField.text = "";
     }
