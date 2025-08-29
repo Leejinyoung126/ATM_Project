@@ -364,13 +364,13 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 61303399}
   m_TextComponent: {fileID: 351777098}
   m_Placeholder: {fileID: 1530207141}
-  m_ContentType: 0
+  m_ContentType: 2
   m_InputType: 0
   m_AsteriskChar: 42
-  m_KeyboardType: 0
+  m_KeyboardType: 4
   m_LineType: 0
   m_HideMobileInput: 0
-  m_CharacterValidation: 0
+  m_CharacterValidation: 1
   m_CharacterLimit: 0
   m_OnSubmit:
     m_PersistentCalls:
@@ -736,6 +736,10 @@ MonoBehaviour:
   ButtonGroup: {fileID: 1993000896}
   DepositUI: {fileID: 432483085}
   WithdrawalUI: {fileID: 1724735675}
+  PopupError: {fileID: 1173902787}
+  moneyNum: {fileID: 212705979}
+  depositInputField: {fileID: 1575032472}
+  withdrawalInputField: {fileID: 61303398}
 --- !u!1 &229518519
 GameObject:
   m_ObjectHideFlags: 0
@@ -1155,7 +1159,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 283956369}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 212705980}
+        m_TargetAssemblyTypeName: PopupBank, Assembly-CSharp
+        m_MethodName: Withdrawal
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 30000
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &283956369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1513,7 +1529,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 432429957}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 212705980}
+        m_TargetAssemblyTypeName: PopupBank, Assembly-CSharp
+        m_MethodName: ClosePopupError
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &432429957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1702,7 +1730,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 489683560}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 212705980}
+        m_TargetAssemblyTypeName: PopupBank, Assembly-CSharp
+        m_MethodName: Withdrawal
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 50000
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &489683560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1902,7 +1942,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 516354589}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 212705980}
+        m_TargetAssemblyTypeName: PopupBank, Assembly-CSharp
+        m_MethodName: Deposit
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 30000
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &516354589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2764,7 +2816,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 994633726}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 212705980}
+        m_TargetAssemblyTypeName: PopupBank, Assembly-CSharp
+        m_MethodName: WithdrawalToInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &994633726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3311,7 +3375,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1284448147}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 212705980}
+        m_TargetAssemblyTypeName: PopupBank, Assembly-CSharp
+        m_MethodName: Deposit
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10000
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1284448147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3432,7 +3508,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1294557536}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 212705980}
+        m_TargetAssemblyTypeName: PopupBank, Assembly-CSharp
+        m_MethodName: Withdrawal
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10000
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1294557536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3973,7 +4061,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1469427587}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 212705980}
+        m_TargetAssemblyTypeName: PopupBank, Assembly-CSharp
+        m_MethodName: Deposit
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 50000
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1469427587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4544,13 +4644,13 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1575032473}
   m_TextComponent: {fileID: 1008006821}
   m_Placeholder: {fileID: 497800443}
-  m_ContentType: 0
+  m_ContentType: 2
   m_InputType: 0
   m_AsteriskChar: 42
-  m_KeyboardType: 0
+  m_KeyboardType: 4
   m_LineType: 0
   m_HideMobileInput: 0
-  m_CharacterValidation: 0
+  m_CharacterValidation: 1
   m_CharacterLimit: 0
   m_OnSubmit:
     m_PersistentCalls:
@@ -4836,7 +4936,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1885268767}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 212705980}
+        m_TargetAssemblyTypeName: PopupBank, Assembly-CSharp
+        m_MethodName: DepositToInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1885268767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4945,7 +5057,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uCD9C\uAE08"
+  m_Text: "\uC785\uAE08"
 --- !u!222 &1914065796
 CanvasRenderer:
   m_ObjectHideFlags: 0
