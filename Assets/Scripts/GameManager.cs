@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿using UnityEngine;
+using System.IO;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,7 +7,7 @@ public class GameManager : MonoBehaviour
 
     public UserData userData;
 
-    
+    private string savePath;
 
     // Start is called before the first frame update
     void Awake()
@@ -24,35 +22,36 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+
+        savePath = Path.Combine(Application.persistentDataPath, "save.json");
+
         userData = new UserData("이진영", 200000, 50000);
 
         //저장된 데이터 불러오기
         if(LoadUserData())
         {
-            Debug.Log("UserData Load success");
+            Debug.Log("UserData Load success from JSON");
         }
     }
 
     //저장
     public void SaveUserData()
     {
-        PlayerPrefs.SetString("user_name", userData.name);
-        PlayerPrefs.SetInt("user_cash", userData.cash);
-        PlayerPrefs.SetInt("user_balance", userData.balance);
-        PlayerPrefs.Save();
+        string json = JsonUtility.ToJson(userData, true);
+        File.WriteAllText(savePath, json);
+        Debug.Log("Save JSON: " +  json);
     }
 
     //로드
     public bool LoadUserData()
     {
-        if(!PlayerPrefs.HasKey("user_name"))
+        if(!File.Exists(savePath))
         {
             return false;
         }
 
-        userData.name = PlayerPrefs.GetString("user_name");
-        userData.cash = PlayerPrefs.GetInt("user_cash");
-        userData.balance = PlayerPrefs.GetInt("user_balance");
+        string json = File.ReadAllText(savePath);
+        userData = JsonUtility.FromJson<UserData>(json);
         return true;
     }
 }
